@@ -26,13 +26,14 @@
                 <div class="col-lg-12 login-form ">
                     <div class="col-lg-12 login-form">
                         <form method="POST" id = "login-frm">
+						
                             <div class="form-group">
                                 <label class="form-control-label" style = "font-size:13px;">USERNAME</label>
                                 <input type="text" class="form-control" name="username">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" style = "font-size:13px;">PASSWORD</label>
-                                <input type="password" class="form-control" name ="password" i>
+                                <input type="password" class="form-control" id="password" name ="password" i>
                             </div>
 
                             <div class="col-lg-12 loginbttm">
@@ -82,7 +83,7 @@
 		</div>
 		</div> -->
 
-
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	</body>
 	<script src = "../assets/js/jquery.js"></script>
 	<script src = "../assets/js/bootstrap.js"></script>
@@ -93,15 +94,25 @@
 				
 				e.preventDefault();
 				$.ajax({
-					url:'login.php',
+					url:'try_login.php',
 					method:'POST',
 					data:$(this).serialize(),
 					error:err=>{
 						console.log(err)
 					},
 					success:function(resp){
+						
 						if(resp== true){
 							location.replace('home.php')
+						}else{
+							Swal.fire({
+								icon: 'error',
+								title: 'Oops...',
+								text: 'Invalid Username or password!',
+								footer: 'Please check your username or password'
+							})
+							$('#password').val('');
+							
 						}
 					}
 				})

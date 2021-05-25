@@ -14,7 +14,7 @@
 			<!-- <div class = "alert alert-primary">Dashboard</div> -->
 			<!-- <h5>Welcome <?php echo ucwords($user_name) ?> !</h5> -->
 			<main>
-        <div class="cards" style = "margin-left:250px;">
+        <div class="cards" style = "margin-left:100px;">
             <div class="card-single">
                 <div>
                     <h1>50</h1>
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-        <div class="twoGrid">
-            <div class="grid-single">
+		<div class="twoGrid m-5 p-3" >
+            <div class="grid-single m-5">
                 <div class="card-body">
                     <div class="text-center">
                         <h4><?php echo date('F d,Y') ?> <span id="now"></span></h4>
@@ -44,12 +44,12 @@
                         <div class="text-center mb-4" id="log_display"></div>
                             <form action="" id="att-log-frm" >
                                 <div class="form-group">
-                                    <label for="eno" class="control-label">Enter your Employee Number</label>
-                                    <input type="text" id="eno" name="eno" class="form-control rounded bg-white text-dark" style = "border-top: 1px solid gray; border-right: 1px solid gray; border-left: 1px solid gray;"/>
+                                    <label for="eno" class="control-label">Enter your Employee Number:</label>
+                                    <input type="text" id="eno" name="eno" class="form-control bg-white text-dark rounded" style = "border-top: 1px solid gray; border-right: 1px solid gray; border-left: 1px solid gray; width:300px;" >
                                 </div>
                                 <center>
-                                    <button type="button" class='btn btn-sm btn-primary log_now col-sm-4' data-id="1">Time In</button>
-                                    <button type="button" class='btn btn-sm btn-primary log_now col-sm-5' data-id="2">Time Out</button>
+                                    <button type="button" class='btn btn-sm btn-primary log_now col-sm-2' data-id="1">TIME IN</button>
+                                    <button type="button" class='btn btn-sm btn-primary log_now col-sm-2' data-id="2">TIME OUT</button>
                                     <!-- <button type="button" class='btn btn-sm btn-primary log_now col-sm-2' data-id="3">IN PM</button>
                                     <button type="button" class='btn btn-sm btn-primary log_now col-sm-2' data-id="4">OUT PM</button> -->
                                 </center>
@@ -58,7 +58,7 @@
                             </form>
                     </div>
                 </div>
-            </div>
+            </div>   
         </div>
 
        

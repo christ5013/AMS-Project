@@ -166,73 +166,74 @@
   
   }
   main{
-	margin-top: 90px;
-	padding: 2rem 1.5rem;
-	background: #f1f5f9;
-  min-height: calc(100vh - 85px);
-  }
-  .cards{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	/* grid-gap: 2rem; */
-	margin-top: 1rem;
-  }
-  .card-single{
-	display: flex;
-	justify-content: space-between;
-	background: #fff;
-	padding: 2rem;
-	border-radius: 12px;
-  margin: 25px;
-  }
-  .card-single div:last-child span{
-	color: var(--main-color);
-	font-size: 3rem;
+    margin-top: 90px;
+    padding: 2rem 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 85px);
+    }
+    .cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-gap: 2rem; */
+    margin-top: 1rem;
+    }
+    .card-single{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 10px;
+    width:300px;
+    }
+    .card-single div:last-child span{
+    color: var(--main-color);
+    font-size: 3rem;
+    
+    }
   
+    .container{
+    margin-top: 4rem;
+    }
+    .card{
+    background: #fff;
+    border-radius: 12px;
+    }
+    .card-header
+    {
+    padding: 1rem;
+    }
+    .card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    }
+    .card-header button{
+    background: var(--main-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border:1px solid var(--main-color);
+    }
+  
+  .twoGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-gap: 2rem; */
+    margin-top: 1rem;
   }
-
-  .container{
-	margin-top: 4rem;
-  }
-  .card{
-	background: #fff;
-	border-radius: 12px;
-  }
-  .card-header
-  {
-	padding: 1rem;
-  }
-  .card-header{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid #f0f0f0;
-  }
-  .card-header button{
-	background: var(--main-color);
-	border-radius: 10px;
-	color: #fff;
-	font-size: .8rem;
-	padding: .5rem 1rem;
-	border:1px solid var(--main-color);
-  }
-
-.twoGrid{
-  display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	/* grid-gap: 2rem; */
-	margin-top: 1rem;
-}
-
-.grid-single{
-	display: flex;
-	justify-content: space-between;
-	background: #fff;
-	padding: 2rem;
-	border-radius: 12px;
-  margin: 10px;
-  }
-
+  
+  .grid-single{
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 10px;
+    width:700px;
+    }
 
   table{
 	border-collapse: collapse;
