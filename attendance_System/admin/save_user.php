@@ -20,7 +20,7 @@
 				$data ['status'] = 2;
 				$data['msg'] = 'Username already exist';
 			}else{
-				// $save=mysqli_query($conn,"UPDATE users set username = '$username',password = '$password',firstname = '$firstname',lastname = '$lastname' where id = $id ");
+			
 				mysqli_query($conn,"UPDATE employee set firstname = '$firstname',lastname = '$lastname' WHERE username = $id");
 				$save=mysqli_query($conn,"UPDATE users set password = '$password',firstname = '$firstname',lastname = '$lastname' where username = $id ");
 				if($save){

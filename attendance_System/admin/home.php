@@ -23,9 +23,9 @@ include 'auth.php';
 		
 			
 			<!-- <div class = "alert alert-primary">Dashboard</div> -->
-			<!-- <h5>Welcome <?php echo ucwords($user_name) ?> !</h5> -->
+			<!-- <h5>Welcome <?php // echo ucwords($user_name) ?> !</h5> -->
 			<main>
-        <div class="cards">
+        <div class="cards" style = "margin-left:100px;">
             <div class="card-single">
                 <div>
                     <h1>
@@ -58,7 +58,7 @@ include 'auth.php';
                     <span class="fas fa-clipboard-list"></span>
                 </div>
             </div>
-            <div class="card-single">
+            <!-- <div class="card-single">
                 <div>
                     <h1>15</h1>
                     <span>Orders</span>
@@ -66,7 +66,7 @@ include 'auth.php';
                 <div>
                     <span class="fas fa-shopping-cart"></span>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 

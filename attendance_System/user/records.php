@@ -19,54 +19,46 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class = "table table-hover" width="100%">
+                            <table class = "table table-hover" id="table" width="100%">
                                 <thead>
-                                    <tr>
-                                        <td>Employee No.</td>
+                                <tr>
+                                        <!-- <td>Employee No.</td> -->
                                         <td>Date</td>
-                                        <td>Time In</td>
-                                        <td>Time Out</td>
+                                        <td>DateType</td>
+                                        <td>Time</td>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <?php 
+                                        $query = mysqli_query($conn,"SELECT * FROM attendance WHERE employee_no = '".$_SESSION['login_employee']."'");
+                                        while ($row = $query->fetch_array()){
+   
+                                    ?>
+                                    <tr>
+                                      
+                                        <td><?php echo date("F d, Y", strtotime($row['datetime_log']))?></td>
+                                        <?php 
+                                            if($row['log_type'] ==1){
+                                                $log = "TIME IN";
+                                            }elseif($row['log_type'] ==2){
+                                                $log = "TIME OUT";
+                                            }
+                                          
+                                            ?>
+                                        <td><?php echo $log ?></td>
+                                        <td><?php echo date("h:i a", strtotime($row['datetime_log']))?></td>
                                         
                                         
 
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Website</td>
-                                        <td>Frontend</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Website</td>
-                                        <td>Frontend</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Website</td>
-                                        <td>Frontend</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Website</td>
-                                        <td>Frontend</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Website</td>
-                                        <td>Frontend</td>
-                                        <td> </td>
-                                    </tr>
+                                    <?php }?>
+                                   
                                 </tbody>
                             </table>
                             <div clas = "totalSalary">
-                                <h4 style = "float:right;">Total: 
+                                <h4 style = "float:right;" id="total">Total: 
                                 <input type="text" class = "form-control rounded w-50 bg-info" style = "float:right; margin-right:50%;"></h4></th> 
                             </div>
                         </div>
@@ -80,4 +72,9 @@
     </main>
 
     </body>
+    <script>
+        $(document).ready(function(){
+            $('#table').DataTable();    
+        }) 
+    </script>
     </html>

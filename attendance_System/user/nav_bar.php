@@ -47,10 +47,10 @@
 
 <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
-        <div class="sidebar-brand">
-          	<h1> 
-		  	<img src="../assets/image/logo.png" alt="logo" style = "margin-left:-40px;" width = "100vmax" height = "70vmax"><span>eTech</span>
-			</h1>
+		<div class="sidebar-brand">
+            <h1> 
+                <img src="../assets/image/logo.png" alt="logo" style = "margin-left:-40px;" width = "100vmax" height = "70vmax"><span><i style = "font-family:shrikhand;background: -webkit-linear-gradient(#27EF9F, #0DB8DE);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">AMS</i><span><i style = "font-size:15px; background: -webkit-linear-gradient(#27EF9F, #0DB8DE);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">com</i></span> </span>
+            </h1>
         </div>
         
         <div class="sidebar-menu">

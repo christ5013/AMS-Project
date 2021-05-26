@@ -43,11 +43,7 @@
 							}elseif($row['log_type'] ==2){
 								$log = "TIME OUT";
 							}
-							// elseif($row['log_type'] ==3){
-							// 	$log = "TIME IN PM";
-							// }elseif($row['log_type'] ==4){
-							// 	$log = "TIME OUT PM";
-							// }
+						
 							?>
 							<td><?php echo $log ?></td>
 							<td><?php echo date("h:i a", strtotime($row['datetime_log']))?></td>

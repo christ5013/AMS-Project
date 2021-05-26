@@ -6,11 +6,11 @@
 <html lang="eng">
 	<head>
 		<title>Employee List | Employee Attendance Record System</title>
-		<?php include('header.php') ?>
+		<?php include 'header.php' ?>
 	</head>
 	
 <body>
-	<?php include('nav_bar.php') ?>
+	<?php include 'nav_bar.php' ?>
 
 
 	<main> 
@@ -37,6 +37,7 @@
                     <thead>
                         <tr>
                             <th>Employee No.</th>
+                            <th>Date</th>
                             <th>No. of Working Hours</th>
                             <th>Status</th>
                             <th>Salary</th>
@@ -44,14 +45,15 @@
                     </thead>
                     <tbody>
                         <?php
-                            $employee_qry= mysqli_query($conn,"SELECT * FROM `employee`");
+                            $employee_qry= mysqli_query($conn,"SELECT * FROM `salary`");
                             while($row=$employee_qry->fetch_array()){
                         ?>
                         <tr>
                             <td><?php echo $row['employee_no']?></td>
-                            <td><?php echo $row['no_working']?></td>
+                            <td><?php echo $row['employee_no']?></td>
+                            <td><?php echo $row['work_hours']?></td>
                             <td><?php echo $row['status']?></td>
-                            <td><?php echo $row['salary']?></td>
+                            <td><?php echo $row['Salary']?></td>
                             <!-- <td>
                                 <center>
 								<div style="display:flex;">
@@ -73,5 +75,10 @@
         </div>
     </main>
 </body>
-	
+	<script>
+
+        $(document).ready(function(){
+			$('#table').DataTable();
+		});
+    </script>
 </html>

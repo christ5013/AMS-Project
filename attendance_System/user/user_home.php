@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 
-
+include_once ('../admin/db_connect.php');
 
 	session_start();
     if (!isset($_SESSION['login_employee'])) {
@@ -27,7 +27,12 @@
         <div class="cards" style = "margin-left:100px;">
             <div class="card-single">
                 <div>
-                    <h1>50</h1>
+                    <h1> <?php 
+                           $count = $conn->query("SELECT COUNT(*) as total FROM employee");
+                           $fetch = mysqli_fetch_array($count);
+                           echo $fetch['total'];
+                        
+                        ?></h1>
                     <span>Employees</span>
                 </div>
                 <div>
@@ -36,7 +41,12 @@
             </div>
             <div class="card-single">
                 <div>
-                    <h1>30</h1>
+                    <h1> <?php 
+                           $count = $conn->query("SELECT COUNT(*) as total FROM projects");
+                           $fetch = mysqli_fetch_array($count);
+                           echo $fetch['total'];
+                        
+                        ?></h1>
                     <span>Projects</span>
                 </div>
                 <div>
@@ -92,7 +102,7 @@
 						$('.log_now').hide()		
 						$('.loading').show()
 						$.ajax({
-							url:'./admin/time_log.php',
+							url:'../admin/time_log.php',
 							method:'POST',
 							data:{type:_this.attr('data-id'),eno:$('[name="eno"]').val()},
 							error:err=>console.log(err),
