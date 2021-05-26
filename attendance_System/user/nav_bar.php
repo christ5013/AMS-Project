@@ -68,7 +68,7 @@
               </a>
             </li>
 			<li>
-              <a href="logout.php">
+              <a href="../admin/logout.php">
                 <span class="fas fa-sign-out-alt"></span>
                 <span>LogOut</span>
               </a>
@@ -97,7 +97,7 @@
 			<div class="user-wrapper">
 				<img src="../assets/image/user_icon.png" width="40px" height="40px" alt="profile-img">
 				<div class="">
-					<h4>Name of the Employee</h4>
+					<h4><?php echo $_SESSION['login_employee']; ?></h4>
 					<small>Employee</small>
 				</div>
 			</div>

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <?php
-	include 'auth.php';
+include 'auth.php';
+
+    // session_start();
+    // if (!isset($_SESSION['login_id'])) {
+    // header("location:index.php");
+    // }else{
+ 
+   
+    // }
+
+
   
 ?>
 <html lang = "eng">

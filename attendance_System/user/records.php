@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	// include 'auth.php';
+	include 'auth.php';
 ?>
 <html lang = "eng">
 	<head>

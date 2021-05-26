@@ -6,11 +6,11 @@
 <html lang="eng">
 	<head>
 		<title>Employee List | Employee Attendance Record System</title>
-		<?php include('header.php') ?>
+		<?php include 'header.php' ?>
 	</head>
 	
 	<body>
-		<?php include('nav_bar.php') ?>
+		<?php include'nav_bar.php' ?>
 
 
 		<main> 

@@ -118,6 +118,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#table').DataTable();
+			$('$table thead').after("<br/><br/>");
 		});
 	</script>
 	<script type="text/javascript">
@@ -207,6 +208,7 @@
 				$('[name="firstname"]').val('')
 				$('[name="lastname"]').val('')
 				$('[name="username"]').val('')
+				$('[name="password"]').val('')
 				$('#manage_user .modal-title').html('Add New User')
 				$('#manage_user').modal('show')
 			})
