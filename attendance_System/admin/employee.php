@@ -28,7 +28,7 @@
                 </div>
             </div> -->
             <div class="well col-lg-12">
-                <button class="btn btn-success" type="button" id="new_emp_btn"><span class="fa fa-plus"></span> Add new </button>
+                <button class="btn btn-success p-2" type="button" id="new_emp_btn"><span class="fa fa-plus"></span> Add New </button>
                 <br />
                 <br />
 				
@@ -48,6 +48,7 @@
                     <tbody>
                         <?php
                             $employee_qry= mysqli_query($conn,"SELECT * FROM `employee`");
+						
                             while($row=$employee_qry->fetch_array()){
                         ?>
                         <tr>

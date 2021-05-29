@@ -38,7 +38,7 @@
 			</div>
 			<div class="alert alert-primary">Administrator Accounts</div>
 			<div class="well col-lg-12">
-				<button type="button" class="btn btn-primary p-2 btn-sm" id="new_user"><i class="fa fa-plus"></i> Add New</button>
+				<button type="button" class="btn btn-success p-2" id="new_user"><i class="fa fa-plus"></i> Add New</button>
 				<br />
 				<br />
 				<table id="table" class="table table-bordered table-striped">

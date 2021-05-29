@@ -65,7 +65,7 @@ include_once ('../admin/db_connect.php');
                             <form action="" id="att-log-frm" >
                                 <div class="form-group">
                                     <label for="eno" class="control-label">Enter your Employee Number:</label>
-                                    <input type="text" id="eno" name="eno" class="form-control bg-white text-dark rounded" style = "border-top: 1px solid gray; border-right: 1px solid gray; border-left: 1px solid gray; width:300px;" >
+                                    <input type="text" readonly id="eno" name="eno" class="form-control bg-white text-dark rounded" value="<?php echo $_SESSION['login_employee']?>" style = "border-top: 1px solid gray; border-right: 1px solid gray; border-left: 1px solid gray; width:300px;" >
                                 </div>
                                 <center>
                                     <button type="button" class='btn btn-sm btn-primary log_now col-sm-4' data-id="1">TIME IN</button>
@@ -111,7 +111,7 @@ include_once ('../admin/db_connect.php');
 									resp = JSON.parse(resp)
 
 									if(resp.status == 1){
-										$('[name="eno"]').val('')
+										// $('[name="eno"]').val('')
 										$('#log_display').html(resp.msg)
 										$('.log_now').show()		
 										$('.loading').hide()

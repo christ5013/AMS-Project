@@ -12,11 +12,7 @@ include 'db_connect.php';
 		}elseif($type == 2){
 			$log = ' Time Out';
 		}
-		// elseif($type == 3){
-		// 	$log = ' time in this afternoon';
-		// }elseif($type == 4){
-		// 	$log = ' time out this afternoon';
-		// }
+		
 		if($save_log){
 				$data['status'] = 1;
 				$data['msg'] = $employee .', your '.$log.' has been recorded. <br/>' ;

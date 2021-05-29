@@ -57,10 +57,6 @@
                                    
                                 </tbody>
                             </table>
-                            <div clas = "totalSalary">
-                                <h4 style = "float:right;" id="total">Total: 
-                                <input type="text" class = "form-control rounded w-50 bg-info" style = "float:right; margin-right:50%;"></h4></th> 
-                            </div>
                         </div>
                     </div>
 
