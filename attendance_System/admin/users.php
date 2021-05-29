@@ -118,7 +118,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#table').DataTable();
-			$('$table thead').after("<br/><br/>");
+			// $('$table thead').after("<br/><br/>");
 		});
 	</script>
 	<script type="text/javascript">
@@ -155,6 +155,7 @@
 			})
 			$('.remove_user').click(function(){
 				var id=$(this).attr('data-id');
+				console.log(id);
 				var _conf = confirm("Are you sure to delete this data ?");
 				if(_conf == true){
 					$.ajax({
@@ -164,8 +165,16 @@
 							if(typeof resp != undefined){
 								resp = JSON.parse(resp)
 								if(resp.status == 1){
-									alert(resp.msg);
-									location.reload()
+									// alert(resp.msg);
+									// location.reload()
+									Swal.fire({	
+									icon: 'success',
+									title: resp.msg,	
+									showConfirmButton: false,
+									timer: 1000
+										
+									})
+									setTimeout(function(){location.reload()}, 2000);
 								}
 							}
 						}
@@ -175,7 +184,7 @@
 			$('.edit_user').click(function(){
 				$('#employee_no').prop("readonly", true);
 				var $id=$(this).attr('data-id');
-				console.log($id);
+			
 				$.ajax({
 					url:'get_user.php',
 					method:"POST",
@@ -184,6 +193,7 @@
 					success:function(resp){		
 						if(typeof resp !=undefined){
 							resp = JSON.parse(resp)
+							
 							$('[name="id"]').val(resp.username);
 							$('[name="username"]').val(resp.username);
 							$('[name="password"]').val(resp.password)

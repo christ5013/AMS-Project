@@ -18,7 +18,8 @@
 						echo json_encode(array('status'=>1,'msg'=>"Data successfully Saved"));
 				}		
 		}else{
-			$save=mysqli_query($conn,"UPDATE `employee`,`users` set `employee`.`firstname`='$firstname',`employee`.`middlename` = '$middlename',`employee`.`lastname`='$lastname',`employee`.`department`='$department',`employee`.`position`='$position',`users`.`access` ='$access' where `employee`.`employee_no`= '$id' and `users`.`username`='$id' ");
+			mysqli_query($conn,"UPDATE `users` set `users`.`firstname` = '$firstname',`users`.`lastname`='$lastname',`users`.`access` ='$access' WHERE `users`.`username` = '$id'");
+			$save=mysqli_query($conn,"UPDATE `employee` set `employee`.`firstname`='$firstname',`employee`.`middlename` = '$middlename',`employee`.`lastname`='$lastname',`employee`.`department`='$department',`employee`.`position`='$position' where `employee`.`employee_no`= '$id' ");
 			
 				if($save){
 						echo json_encode(array('status'=>1,'msg'=>"Data successfully Updated"));

@@ -22,7 +22,7 @@
                     <thead>
                         <tr>
                             <th>Employee No.</th>
-                            <th>Resquest for overtime</th>
+                            <th>Request for overtime</th>
                             <th>number of days</th>
                             <th>Salary</th>
                         </tr>
