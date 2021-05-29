@@ -2,14 +2,6 @@
 <?php
 include 'auth.php';
 
-    // session_start();
-    // if (!isset($_SESSION['login_id'])) {
-    // header("location:index.php");
-    // }else{
- 
-   
-    // }
-
 
   
 ?>
@@ -22,8 +14,7 @@ include 'auth.php';
 		<?php include 'nav_bar.php' ?>
 		
 			
-			<!-- <div class = "alert alert-primary">Dashboard</div> -->
-			<!-- <h5>Welcome <?php // echo ucwords($user_name) ?> !</h5> -->
+			
 			<main>
         <div class="cards" style = "margin-left:100px;">
             <div class="card-single">
@@ -58,16 +49,7 @@ include 'auth.php';
                     <span class="fas fa-clipboard-list"></span>
                 </div>
             </div>
-            <!-- <div class="card-single">
-                <div>
-                    <h1>15</h1>
-                    <span>Orders</span>
-                </div>
-                <div>
-                    <span class="fas fa-shopping-cart"></span>
-                </div>
-            </div> -->
-
+    
         </div>
 
         <div class="container">
