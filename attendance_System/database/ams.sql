@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2021 at 01:38 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: May 29, 2021 at 01:48 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,7 +43,28 @@ CREATE TABLE `attendance` (
 INSERT INTO `attendance` (`id`, `employee_no`, `log_type`, `datetime_log`, `date_updated`) VALUES
 (1, '2021-9350', 1, '2021-05-26 17:03:29', '2021-05-26 17:03:29'),
 (2, '2021-5798', 1, '2021-05-26 18:54:26', '2021-05-26 18:54:26'),
-(3, '2021-5798', 2, '2021-05-26 18:55:01', '2021-05-26 18:55:01');
+(3, '2021-5798', 2, '2021-05-26 18:55:01', '2021-05-26 18:55:01'),
+(4, '2021-9101', 1, '2021-05-28 21:24:25', '2021-05-28 21:24:25'),
+(5, '2021-9350', 1, '2021-05-28 22:46:57', '2021-05-28 22:46:57'),
+(6, '2021-9350', 1, '2021-05-29 08:43:18', '2021-05-29 08:43:18'),
+(7, '2021-9101', 1, '2021-05-29 09:35:51', '2021-05-29 09:35:51'),
+(9, '2021-9350', 2, '2021-05-29 10:01:48', '2021-05-29 10:01:48'),
+(10, '2021-9350', 1, '2021-05-29 13:53:46', '2021-05-29 13:53:46'),
+(11, '2021-8590', 1, '2021-05-29 13:55:09', '2021-05-29 13:55:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consolidate`
+--
+
+CREATE TABLE `consolidate` (
+  `id` int(11) NOT NULL,
+  `employee_no` varchar(255) NOT NULL,
+  `number_days` int(255) NOT NULL,
+  `Request_overtime` varchar(255) DEFAULT NULL,
+  `Monthly_salary` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -68,11 +89,9 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `employee_no`, `firstname`, `middlename`, `lastname`, `department`, `position`, `started_at`, `ended_at`) VALUES
-(2, '2021-5534', 'Christine', 'Godinez', 'Rubio', 'IT', 'Programmer', '0000-00-00', '0000-00-00 00:00:00'),
 (3, '2021-9350', 'Winabel Marie', 'Cabactulan', 'Anore', 'IT', 'Software Developer', '0000-00-00', '0000-00-00 00:00:00'),
 (4, '2021-8590', 'Marjorie', 'Ontolan', 'Entoma', 'Marketing Department', 'Marketing Analyst', '0000-00-00', '0000-00-00 00:00:00'),
 (5, '2021-5798', 'Dave Lyndrex ', '', 'Millan', 'HR', 'Staff', '0000-00-00', '0000-00-00 00:00:00'),
-(6, '2021-1571', 'Daryll', 'Gonzaga', 'Vildosola', 'Operations Department', 'Project Manager', '0000-00-00', '0000-00-00 00:00:00'),
 (7, '2021-9101', 'Kaith Chymbee', 'Santillan', 'Cerrenio', 'IT', 'Software Developer', '0000-00-00', '0000-00-00 00:00:00'),
 (8, '2021-5028', 'Romeo', '', 'Rodemio', 'IT', 'Programmer', '0000-00-00', '0000-00-00 00:00:00'),
 (9, '2021-3787', 'Jeric', 'Dumaguit', 'Baterna', 'Operations Department', 'Project Manager', '0000-00-00', '0000-00-00 00:00:00'),
@@ -80,7 +99,8 @@ INSERT INTO `employee` (`id`, `employee_no`, `firstname`, `middlename`, `lastnam
 (14, '2021-3976', 'Guian', '', 'Amancio', 'Marketing Department', 'Analyst', '0000-00-00', '0000-00-00 00:00:00'),
 (15, '2021-5623', 'Kyla Jean', 'MoniÃ±o', 'Dumaguit', 'IT', 'Software Developer', '0000-00-00', '0000-00-00 00:00:00'),
 (16, '2021-4879', 'James Lloyd', '', 'Belda', 'IT', 'Programmer', '0000-00-00', '0000-00-00 00:00:00'),
-(18, '2021-9406', 'Rehnan', 'YbaÃ±ez', 'Ramil', 'IT', 'Programmer', '0000-00-00', '0000-00-00 00:00:00');
+(18, '2021-9406', 'Rehnan', 'YbaÃ±ez', 'Ramil', 'IT', 'Programmer', '0000-00-00', '0000-00-00 00:00:00'),
+(20, '2021-3606', 'daryll', '', 'Vildosola', 'Operational Maketing', 'analyst', '0000-00-00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -120,10 +140,18 @@ CREATE TABLE `salary` (
   `salary_id` int(11) NOT NULL,
   `employee_no` varchar(30) NOT NULL,
   `Date` date NOT NULL,
-  `work_hours` int(255) NOT NULL,
-  `status` varchar(255) NOT NULL,
-  `Salary` int(255) NOT NULL
+  `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salary`
+--
+
+INSERT INTO `salary` (`salary_id`, `employee_no`, `Date`, `status`) VALUES
+(1, '2021-9350', '0000-00-00', NULL),
+(2, '2021-9101', '0000-00-00', NULL),
+(3, '2021-9350', '0000-00-00', NULL),
+(4, '2021-9101', '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +185,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `acc
 (20, '2021-5623', 'p@$$w0rd123', 'Kyla Jean', 'Dumaguit', 'employee'),
 (21, '2021-4879', 'p@$$w0rd123', 'James Lloyd', 'Belda', 'employee'),
 (23, '2021-9406', 'p@$$w0rd123', 'Rehnan', 'Ramil', 'employee'),
-(25, 'xhianne515@gmail.com', 'admin123', 'Xhianne Vannesse', 'villasco', 'admin');
+(25, 'xhianne515@gmail.com', 'admin123', 'Xhianne Vannesse', 'villasco', 'admin'),
+(26, '2021-3606', 'p@$$w0rd123', 'daryll', 'Vildosola', 'employee');
 
 --
 -- Indexes for dumped tables
@@ -167,6 +196,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `acc
 -- Indexes for table `attendance`
 --
 ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `consolidate`
+--
+ALTER TABLE `consolidate`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -201,13 +236,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `consolidate`
+--
+ALTER TABLE `consolidate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `projects`
@@ -219,13 +260,13 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `salary`
 --
 ALTER TABLE `salary`
-  MODIFY `salary_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `salary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
